@@ -46,3 +46,17 @@ var tom = Object.create(personProto, {
     yearOfBirth: { value: 1847 },
     job: { value: 'designer' }
 });
+
+function interViewQuestion(job) {
+    if (job === 'designer') {
+        return function (name) {
+            console.log(name + ', can you please ...')
+        }
+    }
+}
+
+var question = interViewQuestion('designer');
+
+question('john');
+
+interViewQuestion('designer')('mark');
