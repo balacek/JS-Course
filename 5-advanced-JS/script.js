@@ -60,3 +60,9 @@ var question = interViewQuestion('designer');
 question('john');
 
 interViewQuestion('designer')('mark');
+
+// IIFE function
+(function () {
+    var score = Math.random() * 10;
+    console.log(score >= 5);
+})()
