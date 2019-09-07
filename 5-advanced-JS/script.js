@@ -27,3 +27,22 @@ Person.prototype.calculateAge = function () {
 */
 
 var mark = new Person('mark', 1847, 'Popelar');
+
+// Object.create
+
+var personProto = {
+    calculateAge: function () {
+        console.log(2019 - this.yearOfBirth);
+    }
+};
+
+var jane = Object.create(personProto);
+jane.name = 'jane';
+jane.yearOfBirth = 1884;
+jane.job = 'teacher';
+
+var tom = Object.create(personProto, {
+    name: { value: 'tom' },
+    yearOfBirth: { value: 1847 },
+    job: { value: 'designer' }
+});
