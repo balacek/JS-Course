@@ -1,8 +1,8 @@
-var john = {
+/*var john = {
     name: 'John',
     yearOfBirth: 1998,
     job: 'Teacher'
-}
+}*/
 
 class Person {
     constructor(name, yearOfBirth, job) {
@@ -66,3 +66,32 @@ interViewQuestion('designer')('mark');
     var score = Math.random() * 10;
     console.log(score >= 5);
 })()
+
+var john = {
+    name: 'John',
+    age: 26,
+    job: 'Teacher',
+    presentation: function (style, timeOfDay) {
+        if (style == 'formal') {
+            console.log('goood ' + timeOfDay + ', ladies and gentleman. I am ' + this.name + ' ' + this.age + ' ' + this.job);
+        } else if (style == 'friendly') {
+            console.log('hey whats up ' + timeOfDay + ', ladies and gentleman. I am ' + this.name + ' ' + this.age + ' ' + this.job);
+        }
+    }
+};
+
+var emily = {
+    name: 'emily',
+    age: 30,
+    job: 'designer'
+};
+
+john.presentation('formal', 'morning');
+
+john.presentation.call(emily, 'friendly', 'afternoon');
+
+// Bind
+
+var johnFriendly = john.presentation.bind(john, 'friendly');
+
+johnFriendly('morning');
