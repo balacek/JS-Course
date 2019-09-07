@@ -1,0 +1,4 @@
+var john = {
+    name: 'John';
+
+}
