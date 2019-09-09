@@ -9,7 +9,18 @@ var UICOntroller = (function () {
 })();
 
 var controller = (function (budgetCtrl, UICtrl) {
+    var ctrlAddItem = function () {
 
-    // Some code 
+    }
+
+
+    document.querySelector('.add__btn').addEventListener('click', ctrlAddItem);
+
+    document.addEventListener('keypress', function (e) {
+        //which same as keycode but for older browsers
+        if (e.keyCode === 13 || e.which === 13) {
+            ctrlAddItem();
+        }
+    });
 
 })(budgetController, UICOntroller);
