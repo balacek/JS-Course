@@ -3,14 +3,24 @@ var budgetController = (function () {
 })();
 
 
-var UICOntroller = (function () {
+var UIController = (function () {
 
-    // Some code
+    return {
+        getinput: function () {
+            return {
+                //will be inc or exp
+                type: document.querySelector('.add__type').value,
+                description: document.querySelector('.add__description').value,
+                value: document.querySelector('.add__value').value
+            };
+        }
+    }
 })();
 
 var controller = (function (budgetCtrl, UICtrl) {
     var ctrlAddItem = function () {
-
+        var input = UIController.getinput();
+        console.log(input);
     }
 
 
@@ -23,4 +33,4 @@ var controller = (function (budgetCtrl, UICtrl) {
         }
     });
 
-})(budgetController, UICOntroller);
+})(budgetController, UIController);
