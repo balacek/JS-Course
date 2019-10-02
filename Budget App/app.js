@@ -154,6 +154,8 @@ var UIController = (function () {
 
         deleteListItem: function (selectorId) {
 
+            var el = document.getElementById(selectorId);
+            el.parentNode.removeChild(el);
         },
 
         clearFields: function () {
@@ -252,6 +254,9 @@ var controller = (function (budgetCtrl, UICtrl) {
 
         budgetCtrl.deleteItem(type, id);
 
+        UIController.deleteListItem(itemId);
+
+        updateBudget();
     };
 
 
